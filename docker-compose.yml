@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  ros:
+    image: junekimdev/ros:1.0-base
+    container_name: ros
+    restart: unless-stopped
+    volumes:
+      - ./xycar_ws:/xycar_ws
+    networks:
+      - ros-net
+
+networks:
+  ros-net:
+    external: true
